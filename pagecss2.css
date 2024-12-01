@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+}
+.img{
+    text-align: center;
+    padding: 50px;
+}
+h1{
+    color: blue;
+    text-shadow: 20px;
+    text-align: center;
+}
+table{
+    border-color: azure;
+    border-width: 10px;
+    text-align: center;
+}

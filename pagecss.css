@@ -1,0 +1,56 @@
+header{
+    background-color: rgba(182, 139, 168, 0.575);
+}
+h1{
+    color: #cc6b90;
+    text-align: center;
+    
+        font-family: "Sour Gummy", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings:
+          "wdth" 100;
+    
+    
+      
+}
+h3{
+    color: #a74f71;
+    text-align: center;
+    
+        font-family: "Sour Gummy", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings:
+          "wdth" 100;
+}
+body{
+    text-align: center;
+    background-color: #cbacb8;
+    margin: 10px;
+}
+#p1{
+    
+background: rgba(89, 138, 138, 0.2);
+padding: 3px;
+border: 1px solid black; 
+  padding: 20px; 
+      
+}
+p{
+    border: 4px solid rgb(151, 33, 120); 
+  padding: 20px; 
+  font-style: italic;
+  font-size: 30px;
+}
+footer{
+    background-color: rgba(182, 139, 168, 0.575);
+    font-size: 50px;
+
+}
+:hover{
+    color: #cc6b90;
+}
+  
