@@ -1,137 +1,632 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>CV - Salma Ouerghi</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Portfolio Salma Ouerghi</title>
+<meta property="og:title" content="Salma Ouerghi · Portfolio">
+<meta property="og:image" content="https://salmawerghi.github.io/photo.jpg">
+<meta name="description" content="Salma Ouerghi, étudiante en 3e année DSI à l'ISET Tozeur. Développement mobile (Flutter, Kotlin), web (React, Spring Boot, Node.js) et Python. Recherche un stage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : colonne éditoriale unique, sections séparées par des filets, en-tête collant ; l'histogramme gaussien du stage Sagemcom sert de signature. */
+:root {
+  --paper: #F4F6F3;
+  --surface: #FFFFFF;
+  --ink: #15201C;
+  --muted: #56635D;
+  --line: #D7DDD8;
+  --accent: #0E6B57;      /* vert palmeraie */
+  --accent-soft: #DCEDE6;
+  --sun: #B9761A;          /* datte / brique de Tozeur */
+  --sun-soft: #F6E7CF;
+  --ko: #B23A2E;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.1875rem;
+  --step-2: 1.5rem;
+  --step-3: clamp(1.75rem, 1.3rem + 1.8vw, 2.4rem);
+  --step-5: clamp(2.9rem, 1.6rem + 6.2vw, 6rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E1412; --surface: #151D1A; --ink: #E5ECE8; --muted: #9AA8A1; --line: #27322E;
+    --accent: #52C3A1; --accent-soft: #173029; --sun: #E3A84A; --sun-soft: #33281A; --ko: #EE7A6C;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E1412; --surface: #151D1A; --ink: #E5ECE8; --muted: #9AA8A1; --line: #27322E;
+  --accent: #52C3A1; --accent-soft: #173029; --sun: #E3A84A; --sun-soft: #33281A; --ko: #EE7A6C;
+  color-scheme: dark;
+}
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: var(--step-0); line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.1; }
+p { margin: 0; }
 
-  <!-- Ton style rose -->
-  <link rel="stylesheet" href="style.css">
+.wrap {
+  max-width: 1080px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.mono { font-family: var(--mono); font-size: var(--step--1); letter-spacing: 0.01em; }
+.label { font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); }
 
-  <!-- Icônes Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+/* En-tête */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.brand { font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--accent); }
+.nav { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; min-width: 0; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a { color: var(--muted); text-decoration: none; font-size: 0.875rem; padding: 6px 10px; border-radius: 999px; white-space: nowrap; }
+.nav a:hover { color: var(--ink); background: var(--accent-soft); }
+@media (max-width: 640px) { .nav .opt { display: none; } }
+
+/* Hero */
+.hero { padding-block: clamp(40px, 8vw, 88px) clamp(32px, 6vw, 64px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: end; }
+@media (max-width: 820px) { .hero-grid { grid-template-columns: 1fr; } }
+.status { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px 5px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 0.85rem; font-weight: 600; }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+.who { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.avatar { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; object-position: 50% 28%; border: 3px solid var(--surface); box-shadow: 0 0 0 1px var(--line); flex: none; }
+.hero h1 { font-size: var(--step-5); font-weight: 800; letter-spacing: -0.035em; line-height: 0.95; margin-top: 20px; }
+.hero h1 .last { color: var(--accent); display: block; }
+.pitch { margin-top: 22px; font-size: var(--step-1); max-width: 34em; color: var(--ink); }
+.pitch strong { font-weight: 600; }
+.ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 10px; font: 600 0.95rem var(--body); text-decoration: none; border: 1px solid var(--line); color: var(--ink); background: var(--surface); cursor: pointer; transition: transform .15s ease, border-color .15s ease; }
+.btn:hover { transform: translateY(-1px); border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+
+.facts { border-top: 2px solid var(--ink); display: grid; }
+.facts div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 12px; padding-block: 11px; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+.facts dt { margin: 0; }
+.facts dd { margin: 0; min-width: 0; }
+
+/* Sections */
+section.block { padding-block: clamp(48px, 7vw, 80px); border-top: 1px solid var(--line); }
+.head { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 24px; margin-bottom: 36px; align-items: baseline; }
+@media (max-width: 760px) { .head { grid-template-columns: 1fr; gap: 8px; } }
+.head h2 { font-size: var(--step-3); font-weight: 700; letter-spacing: -0.02em; }
+.head p { color: var(--muted); max-width: 40em; margin-top: 10px; }
+
+/* Expériences */
+.xp { display: grid; gap: 0; }
+.job { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 24px; padding-block: 28px; border-top: 1px solid var(--line); }
+.job:first-child { border-top: 0; padding-top: 0; }
+@media (max-width: 760px) { .job { grid-template-columns: 1fr; gap: 10px; } }
+.when { display: grid; gap: 4px; align-content: start; }
+.when .mono { color: var(--ink); font-weight: 500; }
+.job h3 { font-size: var(--step-2); font-weight: 700; letter-spacing: -0.01em; }
+.job .org { color: var(--accent); font-weight: 600; margin-top: 4px; }
+.job .lede { margin-top: 12px; max-width: 42em; }
+.job ul { margin: 14px 0 0; padding-left: 1.1rem; display: grid; gap: 6px; max-width: 46em; }
+.job li::marker { color: var(--sun); }
+.job-body { min-width: 0; }
+.job-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: 28px; align-items: start; }
+@media (max-width: 900px) { .job-split { grid-template-columns: 1fr; } }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.tag { font-family: var(--mono); font-size: 0.75rem; padding: 3px 9px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+.tag.alt { background: var(--sun-soft); color: var(--sun); }
+
+/* Figure gaussienne */
+.gauss { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 14px 12px; }
+.gauss-top { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.gauss svg { display: block; width: 100%; height: auto; margin-top: 8px; }
+.gauss figcaption { margin-top: 8px; color: var(--muted); font-size: 0.78rem; line-height: 1.45; }
+.okko { display: flex; gap: 12px; }
+.okko span { display: inline-flex; align-items: center; gap: 5px; }
+.okko b { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+
+/* Projets */
+.featured { display: grid; gap: 20px; }
+.proj { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: clamp(20px, 3.5vw, 32px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: clamp(20px, 4vw, 40px); }
+@media (max-width: 860px) { .proj { grid-template-columns: 1fr; } }
+.proj-meta { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.pill { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.pill.live { border-color: transparent; background: var(--sun-soft); color: var(--sun); display: inline-flex; align-items: center; gap: 6px; }
+.pill.live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .35; } }
+.proj h3 { font-size: var(--step-3); font-weight: 700; letter-spacing: -0.02em; margin-top: 14px; }
+.proj h3 small { display: block; font-family: var(--body); font-size: var(--step-0); font-weight: 400; color: var(--muted); letter-spacing: 0; margin-top: 8px; line-height: 1.5; }
+.proj .desc { margin-top: 14px; max-width: 44em; }
+.proj ul { margin: 14px 0 0; padding-left: 1.1rem; display: grid; gap: 6px; }
+.proj li::marker { color: var(--sun); }
+.proj-side { border-left: 1px solid var(--line); padding-left: clamp(16px, 3vw, 28px); display: grid; gap: 18px; align-content: start; min-width: 0; }
+@media (max-width: 860px) { .proj-side { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 18px; } }
+.kv { display: grid; gap: 4px; }
+.kv strong { font-family: var(--display); font-size: 1.6rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.stats .kv span { font-size: 0.78rem; color: var(--muted); line-height: 1.35; }
+.apps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.app { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 0.82rem; line-height: 1.35; }
+.app b { display: block; font-weight: 600; }
+.app span { color: var(--muted); font-family: var(--mono); font-size: 0.7rem; }
+.link-row { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem; font-weight: 500; }
+
+.more-title { margin-top: 48px; margin-bottom: 4px; }
+.rows { display: grid; }
+.row { display: grid; grid-template-columns: 12rem minmax(0, 1fr) auto; gap: 8px 24px; padding-block: 18px; border-bottom: 1px solid var(--line); align-items: baseline; }
+.row:first-child { border-top: 1px solid var(--line); }
+@media (max-width: 760px) { .row { grid-template-columns: 1fr; } }
+.row h3 { font-size: var(--step-1); font-weight: 700; }
+.row p { color: var(--muted); margin-top: 4px; max-width: 46em; }
+.row .tags { margin-top: 10px; }
+.row a { font-size: 0.9rem; font-weight: 500; white-space: nowrap; }
+
+/* Compétences */
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 0 32px; }
+.skill { padding-block: 18px; border-top: 1px solid var(--line); display: grid; gap: 10px; }
+.skill h3 { font-size: 1.05rem; font-weight: 700; }
+.skill .tags { margin-top: 0; }
+
+/* Formation + langues */
+.two { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 56px); }
+@media (max-width: 820px) { .two { grid-template-columns: 1fr; } }
+.edu { display: grid; gap: 0; }
+.edu div { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 16px; padding-block: 14px; border-top: 1px solid var(--line); }
+.edu b { font-weight: 600; display: block; }
+.edu span { color: var(--muted); font-size: 0.92rem; }
+.langs { display: grid; gap: 14px; }
+.lang { display: grid; grid-template-columns: 6rem minmax(0, 1fr) 3.5rem; gap: 12px; align-items: center; }
+.scale { display: grid; grid-template-columns: repeat(6, 1fr); gap: 3px; }
+.scale i { height: 8px; border-radius: 2px; background: var(--line); }
+.scale i.on { background: var(--accent); }
+.lang .mono { text-align: right; color: var(--muted); }
+.soft { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* Contact */
+.contact { background: var(--ink); color: var(--paper); border-radius: 16px; padding: clamp(24px, 5vw, 48px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+@media (max-width: 820px) { .contact { grid-template-columns: 1fr; } }
+.contact h2 { font-size: var(--step-3); font-weight: 700; letter-spacing: -0.02em; }
+.contact p { margin-top: 12px; opacity: .8; max-width: 32em; }
+.clist { display: grid; gap: 10px; }
+.citem { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 10px; border: 1px solid color-mix(in srgb, var(--paper) 22%, transparent); min-width: 0; }
+.citem div { min-width: 0; }
+.citem .label { color: color-mix(in srgb, var(--paper) 65%, transparent); }
+.citem .v { font-weight: 500; overflow-wrap: anywhere; user-select: all; }
+.citem a.v { color: var(--paper); }
+.copy { flex: none; font: 600 0.8rem var(--body); padding: 7px 12px; border-radius: 8px; border: 0; background: var(--paper); color: var(--ink); cursor: pointer; }
+.copy:focus-visible { outline: 2px solid var(--paper); outline-offset: 2px; }
+
+footer { padding-block: 28px 40px; color: var(--muted); font-size: 0.85rem; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+</style>
 </head>
-
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- En-tête -->
-  <header class="container py-5 text-center">
-    <div class="row align-items-center">
-      <div class="col-md-3 mb-3 text-center">
-        <img src="photo.jpg" alt="Photo de Salma Ouerghi" class="photo-profil shadow-sm">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#profil">Salma<span>.</span>Ouerghi</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#experience">Expériences</a>
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a class="opt" href="#formation">Formation</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="profil">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="who"><img class="avatar" src="photo.jpg" alt="Photo de Salma Ouerghi" width="84" height="84"><span class="status"><i></i>Recherche un stage en développement</span></div>
+        <h1>Salma<span class="last">Ouerghi</span></h1>
+        <p class="pitch">Étudiante en <strong>3e année de Développement des Systèmes Informatiques</strong> à l'ISET de Tozeur. Je conçois des applications <strong>mobiles</strong> (Flutter, Kotlin), <strong>web</strong> (React, Spring Boot, Node.js) et des outils <strong>Python</strong> d'analyse de données, du cahier des charges jusqu'aux tests.</p>
+        <div class="ctas">
+          <a class="btn primary" href="#projets">Voir mes projets</a>
+          <a class="btn" href="https://github.com/salmawerghi" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+            github.com/salmawerghi
+          </a>
+          <a class="btn" href="CV.pdf" download="CV_Salma_Ouerghi.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Télécharger mon CV
+          </a>
+        </div>
       </div>
-      <div class="col-md-9 text-md-start">
-        <h1 class="fw-bold">Salma Ouerghi</h1>
-        <h4 class="subtitle">Étudiante en Informatique | Développeuse Web</h4>
-        <p class="mt-3">
-          <i class="bi bi-geo-alt"></i> Tunis, Tunisie<br>
-          <i class="bi bi-envelope"></i> <a href="mailto:salimana350@gmail.com">salimana350@gmail.com</a><br>
-          <i class="bi bi-telephone"></i> +216 96 491 569<br>
-          <i class="bi bi-linkedin"></i> <a href="https://www.linkedin.com/in/ouerghi-salma-085a5b28b/" target="_blank">linkedin.com/in/salma</a>
-        </p>
+      <dl class="facts">
+        <div><dt class="label">Formation</dt><dd>Licence DSI, ISET Tozeur</dd></div>
+        <div><dt class="label">Stages</dt><dd>Sagemcom Tunisie · Tunisie Telecom</dd></div>
+        <div><dt class="label">Points forts</dt><dd>Flutter, React, Python, Supabase</dd></div>
+        <div><dt class="label">Méthode</dt><dd>Scrum, UML, Git</dd></div>
+        <div><dt class="label">Langues</dt><dd>Arabe, français (B2), anglais (B2)</dd></div>
+        <div><dt class="label">Ville</dt><dd>Ariana, Tunisie</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Expériences</span>
+        <div>
+          <h2>Deux stages en entreprise</h2>
+          <p>Un stage de développement dans un service de test industriel, et un stage terrain dans un opérateur télécom.</p>
+        </div>
+      </div>
+
+      <div class="xp">
+        <article class="job">
+          <div class="when">
+            <span class="mono">Janv. – Fév. 2026</span>
+            <span class="label">Stage de perfectionnement</span>
+          </div>
+          <div class="job-body job-split">
+            <div>
+              <h3>Stagiaire développeuse Python</h3>
+              <p class="org">Sagemcom Tunisie · Service Test</p>
+              <p class="lede">Conception et développement d'une application d'analyse des fichiers log <strong>Radio TX</strong> produits par les bancs de test des passerelles résidentielles (RGW). Avant l'outil, ces fichiers étaient analysés à la main.</p>
+              <ul>
+                <li>Parsing des logs par expressions régulières : tests, fréquences, antennes, mesures, unités et limites min/max.</li>
+                <li>Statut <strong>OK / KO</strong> calculé pour chaque mesure, statistiques (moyenne, écart-type, taux de réussite) et filtres.</li>
+                <li>Histogrammes avec <strong>courbe gaussienne</strong> ajustée pour juger la stabilité du processus de test.</li>
+                <li>Export Excel et CSV, interface Tkinter, architecture en modules (parsing, traitement, graphiques, export), documentation du code.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">SciPy</span><span class="tag">Tkinter</span><span class="tag">openpyxl</span><span class="tag alt">UML</span>
+              </div>
+            </div>
+            <figure class="gauss" aria-label="Exemple de graphique produit par l'application : histogramme et loi normale">
+              <div class="gauss-top">
+                <span class="label">Rendu type de l'outil</span>
+                <span class="okko mono"><span><b style="background:var(--accent)"></b>OK</span><span><b style="background:var(--ko)"></b>KO</span></span>
+              </div>
+              <svg id="gauss" viewBox="0 0 320 190" role="img" aria-label="Histogramme d'une mesure de puissance TX avec la courbe gaussienne superposée et les limites min et max"></svg>
+              <figcaption>Illustration avec des valeurs simulées : histogramme d'une mesure, loi normale ajustée et limites du test. Les données réelles de Sagemcom restent confidentielles.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="when">
+            <span class="mono">06 janv. – 01 fév. 2025</span>
+            <span class="label">Stage d'initiation</span>
+          </div>
+          <div class="job-body">
+            <h3>Stagiaire technicienne télécom</h3>
+            <p class="org">Tunisie Telecom · Centre de Services Clientèle, Ariana</p>
+            <p class="lede">Interventions avec l'équipe de maintenance du réseau local d'abonnés, du répartiteur général jusqu'au domicile du client.</p>
+            <ul>
+              <li>Diagnostic et réparation de dérangements sur des lignes fixes : isolement, boucle, terre, courant étranger.</li>
+              <li>Découverte de la chaîne du réseau : répartiteur général, sous-répartiteur, point de concentration, MSAN.</li>
+              <li>Tests de ligne au testeur xDSL et pose de jarretières.</li>
+              <li>Rédaction des comptes rendus d'intervention pour le suivi des réparations.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag alt">Réseau d'abonnés</span><span class="tag alt">xDSL</span><span class="tag alt">Diagnostic de pannes</span><span class="tag alt">Travail terrain</span>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main class="container mb-5">
-
-    <!-- À propos -->
-    <section class="mb-5">
-      <h2 class="section-title">À propos de moi</h2>
-      <p>
-        <strong>Étudiante en développement web, passionnée par les nouvelles technologies.</strong>
-        Je mets ma curiosité, ma rigueur et ma créativité au service de la conception d'applications web modernes et intuitives.
-      </p>
-      <p>
-        <strong>Passionnée par le développement web et l'innovation,</strong>
-        je suis à la recherche d'une opportunité pour appliquer ma curiosité, ma rigueur et ma créativité à la conception d'applications centrées sur l'utilisateur.
-      </p>
-    </section>
-
-    <!-- Compétences -->
-    <section class="mb-5">
-      <h2 class="section-title">Compétences techniques</h2>
-      <div class="table-responsive">
-        <table class="table table-bordered table-striped text-center align-middle">
-          <thead>
-            <tr>
-              <th>Langages</th>
-              <th>Frameworks / Outils</th>
-              <th>Autres</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>HTML, CSS, JavaScript, Python, Java</td>
-              <td>Angular, Git, VS Code, MySQL</td>
-              <td>Conception UML, Algorithmique, Travail en équipe</td>
-            </tr>
-          </tbody>
-        </table>
+  <section class="block" id="projets">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Projets</span>
+        <div>
+          <h2>Ce que j'ai construit</h2>
+          <p>Deux projets en cours de développement cette année, puis des projets académiques et personnels publiés sur GitHub.</p>
+        </div>
       </div>
-    </section>
 
-    <!-- Formation -->
-    <section class="mb-5">
-      <h2 class="section-title">Formation</h2>
-      <ul>
-        <li><strong>2024 - 2027 :</strong> Licence en Informatique</li>
-        <li><strong>2023 - 2024 :</strong> Baccalauréat Scientifique</li>
-      </ul>
-    </section>
+      <div class="featured">
+        <article class="proj">
+          <div>
+            <div class="proj-meta"><span class="pill live">En cours</span><span class="mono" style="color:var(--muted)">Projet de fin d'année · 2026</span></div>
+            <h3>Mida<small>Plateforme de livraison de repas : 4 applications reliées à un même back-end. Le nom vient de la « mida », la table basse familiale tunisienne.</small></h3>
+            <p class="desc">J'ai écrit le cahier des charges et le backlog Scrum, dessiné les maquettes sur Figma, puis je développe l'application client et l'espace restaurant.</p>
+            <ul>
+              <li>Déjà fonctionnel : catalogue des restaurants, recherche et filtres, menus, panier, commande, suivi en temps réel et annulation.</li>
+              <li>Côté restaurant : réception des commandes avec alerte sonore, acceptation, refus avec motif, suivi de la préparation.</li>
+              <li>Logique sensible côté base : fonctions SQL pour passer, accepter et annuler une commande, règles RLS, migrations versionnées.</li>
+              <li>Mode visiteur : on parcourt et on remplit son panier sans compte, la connexion est demandée seulement pour commander.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Flutter</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">PostgreSQL</span><span class="tag">Vitest</span><span class="tag alt">Figma</span><span class="tag alt">Scrum</span>
+            </div>
+          </div>
+          <aside class="proj-side">
+            <div class="apps">
+              <div class="app"><b>Client</b><span>Flutter · mobile</span></div>
+              <div class="app"><b>Livreur</b><span>Flutter · mobile</span></div>
+              <div class="app"><b>Restaurant</b><span>React + TS · web</span></div>
+              <div class="app"><b>Admin</b><span>React + TS · web</span></div>
+            </div>
+            <div class="stats">
+              <div class="kv"><strong>49</strong><span>user stories, 7 sprints</span></div>
+              <div class="kv"><strong>51</strong><span>écrans maquettés</span></div>
+              <div class="kv"><strong>260</strong><span>tests automatisés</span></div>
+            </div>
+            <p class="mono" style="color:var(--muted)">Tests : 80 Flutter, 116 Vitest, 64 sur la base (PGlite).</p>
+          </aside>
+        </article>
 
-    <!-- Projets -->
-    <section class="mb-5">
-      <h2 class="section-title">Projets académiques</h2>
-      <ul>
-        <li><strong>Portfolio personnel :</strong> création d’un site web complet en HTML/CSS pour présenter mes compétences.</li>
-        <li><strong>Application Java :</strong> gestion d’une bibliothèque avec interface graphique (Swing).</li>
-        <li><strong>Mini jeu Python :</strong> développement d’un jeu simple avec Tkinter.</li>
-      </ul>
-    </section>
+        <article class="proj">
+          <div>
+            <div class="proj-meta"><span class="pill live">En cours</span><span class="mono" style="color:var(--muted)">Projet d'équipe · 3e année · 2026</span></div>
+            <h3>DarImmo<small>Application mobile d'annonces immobilières : publier un bien, le trouver, et discuter directement avec le propriétaire.</small></h3>
+            <p class="desc">Projet mené en équipe de trois avec Git. J'ai préparé la base de données et pris en charge plusieurs modules de l'application Flutter.</p>
+            <ul>
+              <li>Base Supabase : schéma, scripts SQL de création et de données de test, sécurité par lignes (RLS) vérifiée.</li>
+              <li>Publication d'annonces, inscription, connexion et écran d'accueil.</li>
+              <li>Messagerie acheteur / vendeur en temps réel (Supabase Realtime).</li>
+              <li>Notifications push via Firebase Cloud Messaging et une Edge Function.</li>
+              <li>Architecture par fonctionnalités avec go_router et Provider, tests sur un vrai téléphone Android.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Supabase</span><span class="tag">Firebase FCM</span><span class="tag">go_router</span><span class="tag">Provider</span><span class="tag alt">Git en équipe</span>
+            </div>
+          </div>
+          <aside class="proj-side">
+            <div class="stats">
+              <div class="kv"><strong>3</strong><span>développeurs</span></div>
+              <div class="kv"><strong>23</strong><span>écrans maquettés</span></div>
+              <div class="kv"><strong>RT</strong><span>chat en temps réel</span></div>
+            </div>
+            <div class="link-row">
+              <a href="https://github.com/salmawerghi/projet_3eme" target="_blank" rel="noopener">Code sur GitHub →</a>
+            </div>
+          </aside>
+        </article>
 
-    <!-- Langues -->
-    <section class="mb-5">
-      <h2 class="section-title">Langues</h2>
-      <div class="table-responsive">
-        <table class="table table-bordered table-striped text-center align-middle">
-          <thead>
-            <tr>
-              <th>Langue</th>
-              <th>Niveau</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Arabe</td><td>Langue maternelle</td></tr>
-            <tr><td>Français</td><td>Courant</td></tr>
-            <tr><td>Anglais</td><td>Intermédiaire</td></tr>
-          </tbody>
-        </table>
+        <article class="proj">
+          <div>
+            <div class="proj-meta"><span class="pill">Terminé</span><span class="mono" style="color:var(--muted)">Projet de 2e année · 2025</span></div>
+            <h3>TechStore<small>Site de vente et de gestion de stock d'accessoires téléphoniques.</small></h3>
+            <p class="desc">Application full-stack : une API REST en Spring Boot et une interface en Next.js. Le travail d'équipe était organisé en sprints Scrum avec user stories et réunions quotidiennes.</p>
+            <ul>
+              <li>API REST pour les produits, les commandes et les utilisateurs (contrôleurs, services, repositories, DTO).</li>
+              <li>Interface web en Next.js 14 et TypeScript.</li>
+              <li>Conteneurisation et déploiement avec Docker.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Docker</span><span class="tag alt">Scrum</span>
+            </div>
+          </div>
+          <aside class="proj-side">
+            <div class="stats">
+              <div class="kv"><strong>REST</strong><span>API Spring Boot</span></div>
+              <div class="kv"><strong>3</strong><span>ressources : produits, commandes, utilisateurs</span></div>
+              <div class="kv"><strong>1</strong><span>stack Docker</span></div>
+            </div>
+            <div class="link-row">
+              <a href="https://github.com/salmawerghi/accesoire_telephonique" target="_blank" rel="noopener">Code sur GitHub →</a>
+            </div>
+          </aside>
+        </article>
       </div>
-    </section>
 
-    <!-- Centres d’intérêt -->
-    <section class="mb-5">
-      <h2 class="section-title">Centres d’intérêt</h2>
-      <p>Programmation, design web, lecture, voyages, apprentissage des langues et culture numérique.</p>
-    </section>
+      <div class="head more-title">
+        <span class="label">Autres travaux</span>
+        <div><h2 style="font-size:var(--step-2)">Projets et travaux pratiques</h2></div>
+      </div>
+      <div class="rows">
+        <article class="row">
+          <span class="mono">Web · 2025</span>
+          <div>
+            <h3>Météo</h3>
+            <p>Application météo : recherche par ville ou géolocalisation, comptes utilisateurs, interface responsive.</p>
+            <div class="tags"><span class="tag">Angular 20</span><span class="tag">TypeScript</span><span class="tag">Firebase Auth</span><span class="tag">API OpenWeatherMap</span></div>
+          </div>
+          <a href="https://github.com/salmawerghi/meteoproject" target="_blank" rel="noopener">GitHub →</a>
+        </article>
+        <article class="row">
+          <span class="mono">Back-end · 2026</span>
+          <div>
+            <h3>Architecture orientée services</h3>
+            <p>Six travaux pratiques : API REST documentée avec Swagger, service SOAP, sécurité par JWT et bcrypt, passerelle API devant trois microservices.</p>
+            <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">SOAP</span><span class="tag">JWT</span><span class="tag">Sequelize</span><span class="tag">MySQL</span><span class="tag">Microservices</span></div>
+          </div>
+          <span></span>
+        </article>
+        <article class="row">
+          <span class="mono">Android · 2026</span>
+          <div>
+            <h3>Android avec Jetpack Compose</h3>
+            <p>Parcours officiel Google, modules 1 à 4 : plus de 20 applications dont « MyCity », un guide de Tozeur avec mise en page adaptée aux tablettes. ViewModel, navigation, tests unitaires et instrumentés.</p>
+            <div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Material 3</span><span class="tag">ViewModel</span><span class="tag">Navigation</span><span class="tag">JUnit</span></div>
+          </div>
+          <span></span>
+        </article>
+        <article class="row">
+          <span class="mono">Python · 2025</span>
+          <div>
+            <h3>Gestion de stock d'une pharmacie</h3>
+            <p>Suivi des entrées et sorties de médicaments, mise à jour automatique des quantités, alertes de rupture et de péremption proche.</p>
+            <div class="tags"><span class="tag">Python</span></div>
+          </div>
+          <a href="https://github.com/salmawerghi/gestion-de-stock-pharma" target="_blank" rel="noopener">GitHub →</a>
+        </article>
+        <article class="row">
+          <span class="mono">Mobile · 2026</span>
+          <div>
+            <h3>Ma Garderie</h3>
+            <p>Application Flutter pour une garderie : écran de démarrage, menu des activités d'éveil et navigation entre les pages.</p>
+            <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span></div>
+          </div>
+          <a href="https://github.com/salmawerghi/garderie-mobile" target="_blank" rel="noopener">GitHub →</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <!-- Télécharger CV -->
-    <section class="cv-download text-center mb-5">
-      <h2 class="section-title">Télécharger mon CV</h2>
-      <p>Vous pouvez télécharger une version PDF de mon CV.</p>
-      <a href="CV.pdf" class="btn btn-primary" download>
-        <i class="bi bi-download"></i> Télécharger le CV (PDF)
-      </a>
-    </section>
-  </main>
+  <section class="block" id="competences">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Compétences</span>
+        <div>
+          <h2>Outils que j'utilise</h2>
+          <p>Toutes pratiquées dans les stages et les projets ci-dessus.</p>
+        </div>
+      </div>
+      <div class="skills">
+        <div class="skill"><h3>Mobile</h3><div class="tags"><span class="tag">Flutter / Dart</span><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">React Native</span></div></div>
+        <div class="skill"><h3>Web front-end</h3><div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">HTML / CSS</span></div></div>
+        <div class="skill"><h3>Back-end</h3><div class="tags"><span class="tag">Spring Boot</span><span class="tag">Node.js / Express</span><span class="tag">API REST</span><span class="tag">SOAP</span><span class="tag">JWT</span><span class="tag">Java Swing / JDBC</span></div></div>
+        <div class="skill"><h3>Données</h3><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span></div></div>
+        <div class="skill"><h3>Cloud et déploiement</h3><div class="tags"><span class="tag">Supabase</span><span class="tag">Firebase</span><span class="tag">Docker</span><span class="tag">Git / GitHub</span></div></div>
+        <div class="skill"><h3>Conception et méthode</h3><div class="tags"><span class="tag alt">UML</span><span class="tag alt">Scrum</span><span class="tag alt">Figma</span><span class="tag alt">Cahier des charges</span><span class="tag alt">Tests</span></div></div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Pied de page -->
-  <footer class="text-center py-3">
-    <em>© 2025 Salma Ouerghi — Portfolio personnel</em>
-  </footer>
+  <section class="block" id="formation">
+    <div class="wrap two">
+      <div>
+        <div class="head" style="grid-template-columns:1fr; gap:8px; margin-bottom:20px">
+          <span class="label">Formation</span>
+          <h2>Parcours</h2>
+        </div>
+        <div class="edu">
+          <div><span class="mono">En cours</span><p><b>Licence en Développement des Systèmes Informatiques</b><span>ISET de Tozeur, 3e année</span></p></div>
+          <div><span class="mono">2024</span><p><b>Baccalauréat</b><span>Tunisie</span></p></div>
+        </div>
+      </div>
+      <div>
+        <div class="head" style="grid-template-columns:1fr; gap:8px; margin-bottom:20px">
+          <span class="label">Langues</span>
+          <h2>Communication</h2>
+        </div>
+        <div class="langs" aria-label="Niveaux de langue sur l'échelle européenne A1 à C2">
+          <div class="lang"><span>Arabe</span><span class="scale" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="mono">Natif</span></div>
+          <div class="lang"><span>Français</span><span class="scale" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="mono">B2</span></div>
+          <div class="lang"><span>Anglais</span><span class="scale" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="mono">B2</span></div>
+        </div>
+        <div class="soft">
+          <span class="tag alt">Travail en équipe</span><span class="tag alt">Autonomie</span><span class="tag alt">Rédaction technique</span><span class="tag alt">Rigueur dans les tests</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <span class="label" style="color:color-mix(in srgb, var(--paper) 65%, transparent)">Contact</span>
+          <h2 style="margin-top:10px">Discutons de votre offre de stage</h2>
+          <p>Je réponds rapidement par e-mail ou par téléphone. Mon CV est téléchargeable ci-contre ; mes rapports de stage sont disponibles sur demande.</p>
+        </div>
+        <div class="clist">
+          <div class="citem"><div><div class="label">E-mail</div><span class="v" id="c-mail">salmaouerghi4@gmail.com</span></div><button class="copy" type="button" data-copy="c-mail">Copier</button></div>
+          <div class="citem"><div><div class="label">Téléphone</div><span class="v" id="c-tel">+216 96 491 569</span></div><button class="copy" type="button" data-copy="c-tel">Copier</button></div>
+          <div class="citem"><div><div class="label">CV</div><a class="v" href="CV.pdf" target="_blank" rel="noopener">CV_Salma_Ouerghi.pdf</a></div></div>
+          <div class="citem"><div><div class="label">GitHub</div><a class="v" href="https://github.com/salmawerghi" target="_blank" rel="noopener">github.com/salmawerghi</a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Salma Ouerghi · Ariana, Tunisie</span>
+    <span class="mono">Mis à jour en novembre 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Histogramme + loi normale (valeurs simulées, déterministes)
+  var svg = document.getElementById('gauss');
+  if (svg) {
+    var NS = 'http://www.w3.org/2000/svg';
+    var W = 320, H = 190, L = 30, R = 10, T = 14, B = 34;
+    var mu = 18.0, sd = 0.55, lo = 16.9, hi = 19.2, xmin = 16.0, xmax = 20.0, bins = 20;
+    var n = 400, bw = (xmax - xmin) / bins;
+    var pdf = function (x) { return Math.exp(-0.5 * Math.pow((x - mu) / sd, 2)) / (sd * Math.sqrt(2 * Math.PI)); };
+    var seed = 7, rnd = function () { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+    var counts = [];
+    for (var i = 0; i < bins; i++) {
+      var c = xmin + (i + 0.5) * bw;
+      counts.push(Math.max(0, Math.round(n * bw * pdf(c) * (0.82 + rnd() * 0.36))));
+    }
+    var ymax = Math.max.apply(null, counts) * 1.15;
+    var sx = function (x) { return L + (x - xmin) / (xmax - xmin) * (W - L - R); };
+    var sy = function (y) { return H - B - y / ymax * (H - T - B); };
+    var el = function (tag, attrs, text) {
+      var e = document.createElementNS(NS, tag);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      if (text != null) e.textContent = text;
+      svg.appendChild(e); return e;
+    };
+    for (var g = 0; g <= 4; g++) {
+      var yv = ymax * g / 4;
+      el('line', { x1: L, x2: W - R, y1: sy(yv), y2: sy(yv), stroke: 'var(--line)', 'stroke-width': 1 });
+    }
+    for (i = 0; i < bins; i++) {
+      var x0 = xmin + i * bw, mid = x0 + bw / 2;
+      var ok = mid >= lo && mid <= hi;
+      el('rect', { x: sx(x0) + 0.75, y: sy(counts[i]), width: Math.max(0, sx(x0 + bw) - sx(x0) - 1.5), height: Math.max(0, sy(0) - sy(counts[i])), fill: ok ? 'var(--accent)' : 'var(--ko)', opacity: ok ? 0.55 : 0.75, rx: 1 });
+    }
+    var d = '';
+    for (var s = 0; s <= 120; s++) {
+      var xv = xmin + (xmax - xmin) * s / 120;
+      d += (s ? 'L' : 'M') + sx(xv).toFixed(1) + ' ' + sy(n * bw * pdf(xv)).toFixed(1);
+    }
+    el('path', { d: d, fill: 'none', stroke: 'var(--ink)', 'stroke-width': 1.8 });
+    [[lo, 'Min'], [hi, 'Max']].forEach(function (p) {
+      el('line', { x1: sx(p[0]), x2: sx(p[0]), y1: T, y2: H - B, stroke: 'var(--sun)', 'stroke-width': 1.4, 'stroke-dasharray': '4 3' });
+      el('text', { x: sx(p[0]) + 4, y: T + 9, fill: 'var(--sun)', 'font-size': 10, 'font-family': 'IBM Plex Mono, monospace' }, p[1]);
+    });
+    el('line', { x1: L, x2: W - R, y1: H - B, y2: H - B, stroke: 'var(--muted)', 'stroke-width': 1 });
+    for (var t = 16; t <= 20; t++) {
+      el('text', { x: sx(t), y: H - B + 14, fill: 'var(--muted)', 'font-size': 10, 'text-anchor': 'middle', 'font-family': 'IBM Plex Mono, monospace' }, String(t));
+    }
+    el('text', { x: (L + W - R) / 2, y: H - 4, fill: 'var(--muted)', 'font-size': 10, 'text-anchor': 'middle', 'font-family': 'IBM Plex Sans, sans-serif' }, 'Puissance TX (dBm)');
+    el('text', { x: W - R, y: T + 22, fill: 'var(--ink)', 'font-size': 10, 'text-anchor': 'end', 'font-family': 'IBM Plex Mono, monospace' }, 'μ = 18,0  σ = 0,55');
+  }
+
+  // Boutons Copier
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var src = document.getElementById(btn.getAttribute('data-copy'));
+      var text = src.textContent.trim();
+      var done = function () { btn.textContent = 'Copié'; setTimeout(function () { btn.textContent = 'Copier'; }, 1600); };
+      var fallback = function () {
+        var r = document.createRange(); r.selectNodeContents(src);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        btn.textContent = 'Sélectionné';
+        setTimeout(function () { btn.textContent = 'Copier'; }, 1600);
+      };
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
+        else fallback();
+      } catch (e) { fallback(); }
+    });
+  });
+})();
+</script>
 </body>
 </html>
